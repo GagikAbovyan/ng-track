@@ -1,0 +1,41 @@
+<div class="text-center" id="contain">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+          <h1 class="text-success">Upload Video</h1>
+      </div>
+      <div class="col-md-12">
+        <video width="400" height="400" src="{{API}}" controls #video >
+              Browser not supported
+        </video> 
+      </div>
+    </div>
+
+    <div class="row mt-5 justify-content-center">
+      <div class="row w-100 justify-content-center">
+        <form class="w-75">
+            <div class="form-group w-75 m-auto">
+              <!-- <label for="upload-style" >
+                   <i class="fas fa-cloud-upload-alt" aria-hidden="true"> Choose File</i> 
+                  <input type="file" id="upload-style" name="photo" ng2FileSelect [uploader]="uploader"/>
+              </label> -->
+              <input type="file" name="photo" ng2FileSelect [uploader]="uploader" />
+              <button type="button" class="btn btn-success btn-s" 
+                (click)="uploader.uploadAll()" 
+                [disabled]="!uploader.getNotUploadedItems().length" >
+                    Upload an Image
+              </button>
+            </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- <div style="position:relative;">
+    <a class='btn btn-primary' href='javascript:;'>
+        Choose File...
+        <input type="file" style='position:absolute;z-index:2;top:0;left:0;filter: alpha(opacity=0);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";opacity:0;background-color:transparent;color:transparent;' name="file_source" size="40"  onchange='$("#upload-file-info").html($(this).val());'>
+    </a>
+    &nbsp;
+    <span class='label label-info' id="upload-file-info"></span>
+</div> -->

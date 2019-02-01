@@ -1,0 +1,114 @@
+<!-- <div class="text-center">
+  <div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1 class="text-danger ">Object Tracking</h1>
+        </div>
+        <div class="col-md-12">
+          <h3 class="text-success">
+              Track Your objects craete XML-files for Train & you WIN)))
+          </h3>
+        </div>
+      
+        <div class="col-md-6 width_video" >
+          <video id = "video"  src={{API}} on-play="readVideo()" class="mw-100 w-100 h-75 border rounded" controls></video>
+          <input type="file" id="upload-style" name="photo" ng2FileSelect [uploader]="uploader"/>
+          <div class="col-md-12 p-5 text-info text-uppercase border-bottom">CanvasInput 
+               <input (change)="readDataUrl()" #fileInput type="file" id="fileInput"name="file" accept="image/*" /> -->
+          <!-- </div>
+        </div>
+
+        <div class="col-md-6 width_video">
+            
+            (onmouseup)="onMouseUp(event)" (onmousedown)="onMouseDown(event)" -->
+          <!-- <canvas #canvasOutput id="canvasOutput" src="../../assets/icon3.png" (mousemove)="onMouseMove($event)" (mouseup)="mouseUp()"  (mousedown)="mouseDown()" src="../../assets/icon3.png" class="mw-100 w-100 h-75 border rounded"> </canvas>
+          <div class="output"></div>
+          <div class="col-md-12 p-5 text-info text-uppercase border-bottom">CanvasOutput</div>
+        </div>
+        <div class="col-md-12">
+            <button id="tryIt" class="btn btn-success mr-2" (click)="detectFace()" [disabled]="!classifiersLoaded$ | async" >Track Objects</button>
+            <button id="loadCV" class="btn btn-success mr-2" (click)="loadCV()">load OpenCV</button>
+        </div>
+    </div>  -->
+
+<!-- <div>
+  <a routerLink="/example-list">More Examples</a>
+</div> -->
+  <!-- <div class="row mt-5 justify-content-center ">
+      <div class="row w-100 justify-content-center">
+          <form class="w-75">
+            <div class="form-group w-75 m-auto">
+              <label for="formGroupExampleInput" ></label>
+                <input type="text" class="form-control mw-100 w-100" placeholder="Class Name" 
+                (input)="onSearchChange($event.target.value)" aria-label="Username" 
+                aria-describedby="basic-addon1"/>
+                <button type="button" class="btn btn-success btn-s" 
+                (click)="uploader.uploadAll()" 
+                [disabled]="!uploader.getNotUploadedItems().length" >
+                  Upload an Image
+                </button>
+                <small id="emailHelp" class="form-text text-danger">{{warning}}</small>
+                <ul class="inline border-bottom border-right border-left radius p-3">
+                  <li class="m-2">
+                     [disabled]="!this.className.length" -->
+                      <!-- <div class="btn btn-success mt-2" (click)="addClass()" >Add Class</div>
+                  </li>
+                  <li class="m-2">
+                    [disabled]="!this.className.length" -->
+                      <!-- <div class="btn btn-danger mt-2" (click)="popClass()" >Pop Class</div>
+                  </li>
+                  <li class="m-2" *ngFor="let class of classes" > 
+                     <button class="btn btn-info mt-2">{{class.name}}</button>
+                  </li>  -->
+                <!-- </ul>
+            </div>
+          </form>   
+        </div>  
+    </div>
+  </div>
+</div>  -->
+
+
+<div class="container-fluid main_container full-height justify-content-center align-items-center"> 
+  <h1 class="text-center text-white header">OBJECT TRACKING</h1> 
+  <h3 class="text-center text-white">Track Your objects create XML-files for Train & you WIN)))</h3> 
+  <div class="row dilation full-height"> 
+    <video id = "video" class="rounded" width="500px"  src={{API}} on-play="readVideo()"   controls></video>
+    <canvas #canvasOutput  id="canvasOutput" height="500" width="500" (mousemove)="onMouseMove($event)" (mouseup)="mouseUp()"  (mousedown)="mouseDown($event)" > </canvas>
+    <div class="col-md-3 border full-height"> 
+      <input type="text" class="form-control mw-25 w-75 input-class" maxlength="20" placeholder="Class Name" 
+      (input)="onSearchChange($event.target.value)" (keydown)="onKeydown($event)" aria-label="Username" 
+      aria-describedby="basic-addon1"/>
+      <span class="text-danger">{{this.warning}}</span>
+      <button type="submit" class="add-button input-class" (click)="addClass()"> 
+        <strong class="add-class">+ Add</strong> 
+      </button>  
+      <br/> 
+      <hr/> 
+      <li *ngFor="let clazz of classes" class="m-2" 
+          [ngStyle]="{
+            'color': clazz.color
+          }" > 
+        <button class="mt-2" (click)="setClasses(clazz)">{{clazz.name}}</button>
+        <i class="close" (click)="popClass(clazz)">x</i>
+      </li>
+    </div> 
+    <div class="row dilation element" id="input-label"> 
+      <button class="btn btn-upload" id="but-upload" (click)="file.click()" ><i id="icon-upload" class="fa fa-upload"> Upload</i></button> 
+      <input #file type="file" id="file" name="photo" (change)="detectFiles($event)" ng2FileSelect [uploader]="uploader" />
+      <span [hidden]="!expression" class="file-name">{{this.fileName}}</span>
+      <!-- <button type="button" id="upload-video"  class="btn btn-success btn-s btn-upload" 
+        (click)="uploader.uploadAll()" 
+        [disabled]="!uploader.getNotUploadedItems().length" style="visibility:hidden;">
+            Upload an Image
+      </button> -->
+    </div> 
+  </div> 
+</div>
+
+
+<!-- <div class="class-name" class="input-group mb-3"> 
+  <input  id="className"  placeholder="input class Name" tabindex="20"/>
+</div> -->
+
+
